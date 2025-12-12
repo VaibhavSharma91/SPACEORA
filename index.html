@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<style>
+.animation {animation: fadeIn 1s ease-in forwards}
+@keyframes fadeIn {from { opacity: 0; transform: translateY(10px); }to { opacity: 1; transform: translateY(0);}}
+body { font-family: Arial, sans-serif; background-image: url("background.jpg");background-size: cover;background-position: center; background-repeat: no-repeat; background-attachment: fixed;  ; margin: 0;}
+header { background-color: #0072ff;color:  white; text-align: center; padding: 15px; box-shadow: 0px 4px 10px rgba(0,0,0,0.2);border-radius: 8px;}
+a { margin: 10px; text-decoration: none; color: #1ecbd7;font-weight: bold; transition: color 0.7s; }
+section { text-align: center; padding: 30px; }
+.box { transition: transform 0.3s;color:white;background-color:  #6116c484; padding: 20px; margin: 10px auto; width: 300px;box-shadow: 0px 4px 10px rgba(0,0,0,0.2);border-radius: 8px; }
+.box:hover { transform: translateX(-10px);}
+.brand {text-align: left;}
+.logo {height: 75px; width: auto; margin: 10px;}
+a:hover {color:#0072ff;}
+</style>
+</head>
+<body>
+<div class="brand">
+<img src="logo.png" alt="Spaceora Logo" class="logo">
+</div>
+<header class="animation"><h1>Dashboard</h1></header>
+<section class="animation">
+  <div class="box">
+    <h3>Explore Room Designs</h3>
+    <a href = "rooms.html">View various room inspirations.</a>
+  </div>
+  <div class="box">
+    <h3>Color Schemes</h3>
+    <a href="colors.html">Choose color combinations for your space.</a>
+  </div>
+  <div class="box">
+    <h3>Login</h3>
+    <a href="login.html"> Login for a personalised experience. </a>
+  </div>
+</section>
+</body>
+</html>

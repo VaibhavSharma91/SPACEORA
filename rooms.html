@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Room Designs</title>
+<style>
+.animation {animation: fadeIn 1s ease-in forwards}
+@keyframes fadeIn {from { opacity: 0; transform: translateY(10px); }to { opacity: 1; transform: translateY(0);}}
+body { font-family: Arial, sans-serif; margin: 0;background-image: url("background.jpg");background-size: cover;       background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
+header { background-color: #0072ff; color: white; text-align: center; padding: 15px; box-shadow: 0px 4px 10px rgba(0,0,0,0.2); border-radius: 8px;}
+nav { background-color: #6116c484; text-align: center; padding: 10px;box-shadow: 0px 4px 10px rgba(0,0,0,0.2); }
+nav a { margin: 10px; text-decoration: none; color: #1ecbd7; font-weight: bold;transition: color .7s; }
+nav a:hover { color: #0072ff;}
+section { text-align: center; padding: 30px; }
+input, select { padding: 5px; margin: 5px; }
+.brand {text-align: left;}
+.logo {height: 75px; width: auto; margin: 10px;}
+p { color: white; font-size: 18px; }
+select {  box-shadow: 0px 4px 10px rgba(0,0,0,0.2); border-radius: 8px;}
+button { box-shadow: 0px 4px 10px rgba(0,0,0,0.2); border-radius: 8px;}
+</style>
+</head>
+<body>
+<div class="brand">
+<img src="logo.png" alt="Spaceora Logo" class="logo">
+</div>
+<header class="animation"><h1>Room Designs</h1></header>
+<nav class="animation">
+  <a href="index.html">Dashboard</a>
+  <a href="colors.html">Color Schemes</a>
+  <a href="login.html">Login</a>
+</nav>
+<section class="animation">
+  <p>Choose a room type and color to preview:</p>
+<select id="roomType">
+    <option>Living Room</option>
+    <option>Bedroom</option>
+    <option>Kitchen</option>
+  </select>
+  <select id="colorType">
+<option>Sky Blue</option>
+<option>Baby Blue</option>
+<option>Ice Blue</option>
+<option>Royal Blue</option>
+<option>Navy Blue</option>
+<option>Midnight Blue</option>
+<option>Ocean Blue</option>
+<option>Teal Blue</option>
+<option>Aqua Blue</option>
+<option>Turquoise</option>
+<option>Mint Green</option>
+<option>Forest Green</option>
+<option>Olive Green</option>
+<option>Emerald Green</option>
+<option>Neon Green</option>
+<option>Lime Green</option>
+<option>Sage Green</option>
+<option>Moss Green</option>
+<option>Sea Green</option>
+<option>Jade Green</option>
+<option>Bright Red</option>
+<option>Dark Red</option>
+<option>Cherry Red</option>
+<option>Crimson</option>
+<option>Ruby Red</option>
+<option>Rose Red</option>
+<option>Coral Red</option>
+<option>Brick Red</option>
+<option>Wine Red</option>
+<option>Maroon</option>
+<option>Baby Pink</option>
+<option>Hot Pink</option>
+<option>Pastel Pink</option>
+<option>Rose Pink</option>
+<option>Blush Pink</option>
+<option>Peach Pink</option>
+<option>Magenta</option>
+<option>Bubblegum Pink</option>
+<option>Salmon Pink</option>
+<option>Flamingo Pink</option>
+<option>Lemon Yellow</option>
+<option>Mustard Yellow</option>
+<option>Golden Yellow</option>
+<option>Sunflower Yellow</option>
+<option>Amber</option>
+<option>Peach</option>
+<option>Apricot</option>
+<option>Tangerine Orange</option>
+<option>Burnt Orange</option>
+<option>Copper Orange</option>
+<option>Lavender</option>
+<option>Lilac</option>
+<option>Violet</option>
+<option>Purple</option>
+<option>Deep Purple</option>
+<option>Plum</option>
+<option>Grape Purple</option>
+<option>Mauve</option>
+<option>Indigo</option>
+<option>Orchid Purple</option>
+<option>Light Brown</option>
+<option>Dark Brown</option>
+<option>Coffee Brown</option>
+<option>Caramel Brown</option>
+<option>Chocolate Brown</option>
+<option>Sand Brown</option>
+<option>Beige</option>
+<option>Tan</option>
+<option>Khaki</option>
+<option>Walnut Brown</option>
+<option>Light Gray</option>
+<option>Dark Gray</option>
+<option>Silver Gray</option>
+<option>Charcoal Gray</option>
+<option>Slate Gray</option>
+<option>Black</option>
+<option>Jet Black</option>
+<option>White</option>
+<option>Off White</option>
+<option>Cream White</option>
+  </select>
+  <input type="button" value="Preview" onclick="PinterestSearch()">
+</section>
+<script>
+function PinterestSearch() {
+  const room = document.getElementById("roomType").value;
+  const color = document.getElementById("colorType").value;
+
+  const searchQuery = encodeURIComponent(color + " " + room);
+
+  const pinterestUrl = "https://www.pinterest.com/search/pins/?q=" + searchQuery;
+
+  window.open(pinterestUrl, "_blank");
+}
+</script>
+
+</body>
+</html>

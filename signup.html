@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spaceora - Signup</title>
+  <style>
+.animation {animation: fadeIn 1s ease-in forwards}
+@keyframes fadeIn {from { opacity: 0; transform: translateY(10px); }to { opacity: 1; transform: translateY(0);}}
+.brand {text-align: center;}
+.logo {height: 200px; width: auto; margin: 10px;}
+body { font-family: Arial, sans-serif; margin: 0;background-image: url("background.jpg");background-size: cover;background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
+.container {width: 350px;margin: 100px auto;padding: 20px;background: white;border: 1px solid #ccc;border-radius: 6px;text-align: center;}
+h2 {color: #0072ff;}
+input {width: 100%;padding: 6px;margin-top: 5px;}
+button {margin-top: 15px;padding: 8px 16px;background-color: #0072ff;color: white;border: none;}
+.error {color: red;font-size: 13px; }
+.link {margin-top: 10px;color: blue;cursor: pointer;text-decoration: underline;}
+.box { transition: transform 0.3s;background-color:#6116c484; padding: 20px; margin: 20px auto; width: 175px;box-shadow: 0px 4px 10px rgba(0,0,0,0.2);border-radius: 8px; }
+.box:hover { transform: translateY(-10px);}
+.box a { text-align: center;text-decoration: none; color: #1ecbd7;font-weight: bold; transition: color 0.7s;}
+section { text-align: center; padding: 30px; }
+a:hover {color:#0072ff;}
+  </style>
+</head>
+<body>
+<div class="brand">
+<img src="logo.png" alt="Spaceora Logo" class="logo">
+</div>
+  <div class="container animation">
+    <h2>Sign Up</h2>
+        <form id="signupForm">
+  <input type="email" id="signupEmail" placeholder="Email">
+  <div id="signupEmailError" class="error"></div>
+
+  <input type="password" id="signupPassword" placeholder="Password">
+  <div id="signupPasswordError" class="error"></div>
+
+  <button type="submit">Create Account</button>
+
+    </form>
+  </div>
+  <div class="box"> 
+  <a href="index.html"> Back To Dashboard</a>
+  </div>
+  <div class="box"> 
+  <a href="login.html"> Login in</a>
+  </div>
+
+<script>
+document.getElementById("signupForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  let valid = true;
+
+  const email = document.getElementById("signupEmail").value.trim();
+  const password = document.getElementById("signupPassword").value.trim();
+
+  if (!email.match(/^[^@]+@[^@]+\.[^@]+$/)) {
+    document.getElementById("signupEmailError").innerText = "Enter a valid email.";
+    valid = false;
+  } else {
+    document.getElementById("signupEmailError").innerText = "";
+  }
+
+  if (password.length < 6) {
+    document.getElementById("signupPasswordError").innerText = "Password must be at least 6 characters.";
+    valid = false;
+  } else {
+    document.getElementById("signupPasswordError").innerText = "";
+  }
+
+  if (!valid) return;
+
+  let users = JSON.parse(localStorage.getItem("users")) || {};
+
+  if (users[email]) {
+    alert("User already exists. Please login.");
+    return;
+  }
+
+  users[email] = password;
+  localStorage.setItem("users", JSON.stringify(users));
+
+  alert("Signup successful! Redirecting to login...");
+  window.location.href = "login.html";
+});
+</script>
+
+
+
+</body>
+</html>
